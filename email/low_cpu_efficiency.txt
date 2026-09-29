@@ -6,24 +6,29 @@ Over the last <DAYS> days, you have used <RANK> CPU-hours on HPC Cluster (<PARTI
 
 A good target value for CPU efficiency is <TARGET> or higher.
 
-Low CPU utilization often indicates one or more of the following:
+This alert is generated when jobs show both low CPU utilization and low memory utilization. In many cases, this indicates that more CPU cores and memory were requested than the application actually required.
+
+Common causes include:
 
   - The application is using fewer CPU cores than were requested.
-  - The application is waiting on data or external processes.
-  - More CPU cores were requested than the application can effectively use.
+  - The application is using substantially less memory than was requested.
+  - Resource requests were based on estimates that were larger than the application's actual requirements.
+  - The workload is spending significant time idle or waiting on other processes.
   - An interactive session was allocated but spent significant time idle.
 
-You can review detailed job metrics, including CPU utilization, memory usage, and job timelines using RCC JobStats:
+You can review detailed job metrics, including CPU utilization, memory usage, and job timelines using RCC JobStats.
 
-Command-line:
+For command-line job statistics, use:
+
 <JOBSTATS>
 
-Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization charts:
+For graphical job metrics and historical utilization data, use RCC JobStats through Open OnDemand:
+
 <JOBSTATSURL>
 
-For guidance on requesting and using cluster resources efficiently, see:
-https://docs.rcc.mcw.edu/cluster/jobs/running-jobs
+For more information about this alert and how to improve CPU efficiency, see:
+https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#low-cpu-efficiency
 
-Reviewing your application's documentation may help identify configuration settings that improve CPU utilization.
+Reviewing your application's documentation may help identify configuration settings that improve resource utilization.
 
 If you would like assistance interpreting JobStats output or improving performance, simply reply to this email. Your reply will automatically create a Research Computing Center support ticket.

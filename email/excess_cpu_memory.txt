@@ -10,15 +10,15 @@ This resulted in <UNUSED> TB-hours of unused memory, reducing the amount of memo
 
 A good target value for Percent-Used is 80% or higher. Please consider requesting less memory by adjusting the --mem-per-cpu or --mem Slurm directive.
 
-Please review the affected jobs using JobStats:
+You can review memory utilization using JobStats. For example:
 
-Command-line:
 <JOBSTATS>
 
-Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization charts:
+For graphical job metrics and historical utilization data, use RCC JobStats through Open OnDemand:
+
 <JOBSTATSURL>
 
-For guidance on requesting and using cluster resources efficiently, see:
-https://docs.rcc.mcw.edu/cluster/jobs/running-jobs
+For more information about this alert and how to right-size your memory requests, see:
+https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#excess-cpu-memory
 
 If you need assistance determining appropriate memory requirements, simply reply to this email. Your reply will automatically create a Research Computing Center support ticket.

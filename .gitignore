@@ -8,6 +8,7 @@ jds-env/
 .venv/
 .conda_envs_dir_test
 email/orig/
+cache/
 
 # Don't upload prod config.yaml with ldap password
 config.yaml

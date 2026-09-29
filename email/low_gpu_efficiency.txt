@@ -15,14 +15,16 @@ Low GPU utilization often indicates one or more of the following:
 
 You can review detailed job metrics, including GPU utilization, CPU utilization, memory usage, and job timelines using RCC JobStats.
 
-Command-line:
+For command-line job statistics, use:
+
 <JOBSTATS>
 
-Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization charts:
+For graphical job metrics and historical utilization data, use RCC JobStats through Open OnDemand:
+
 <JOBSTATSURL>
 
-For guidance on requesting and using cluster resources efficiently, see:
-https://docs.rcc.mcw.edu/cluster/jobs/running-jobs
+For more information about this alert and how to improve GPU efficiency, see:
+https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#low-gpu-efficiency
 
 Reviewing your application's documentation may help identify configuration settings that improve GPU utilization.
 
