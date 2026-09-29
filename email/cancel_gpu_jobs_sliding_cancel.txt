@@ -12,7 +12,8 @@ Command-line:
 Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization charts:
 <JOBSTATSURL>
 
-For information about RCC GPU utilization policies and automated monitoring, see:
+For more information about this alert and how to improve GPU efficiency, see:
+https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#automated-gpu-utilization-monitoring
 https://docs.rcc.mcw.edu/cluster/etiquette/#automated-gpu-utilization-monitoring
 
 If you believe this cancellation occurred in error or you need assistance optimizing GPU utilization, simply reply to this email. Your reply will automatically create a Research Computing Center support ticket.
