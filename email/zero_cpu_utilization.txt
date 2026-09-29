@@ -12,8 +12,8 @@ Command-line:
 Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization charts:
 <JOBSTATSURL>
 
-For guidance on requesting and using cluster resources efficiently, see:
-https://docs.rcc.mcw.edu/cluster/jobs/running-jobs
+For more information about this alert and how to resolve zero CPU utilization, see:
+https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#zero-cpu-utilization
 
 Please investigate this issue before submitting additional jobs.
 
