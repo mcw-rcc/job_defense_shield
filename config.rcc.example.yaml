@@ -8,18 +8,16 @@
 jobstats-module-path: /hpc/utils/jobstats
 jobstats-config-path: /hpc/utils/jobstats
 
-violation-logs-path: /hpc/utils/jds/logs
-email-files-path: /hpc/utils/jds/email
+violation-logs-path: /hpc/utils/job_defense_shield/logs
+email-files-path: /hpc/utils/job_defense_shield/email
 
-#email-method: "simple"
-#email-domain-name: "@mcw.edu"
 email-method: ldap
 greeting-method: ldap
 ldap-server: ldap01.rcc.mcw.edu
 ldap_uri: ldap://ldap01.rcc.mcw.edu
 ldap_starttls: True
 ldap-dn: "cn=ldapbind,ou=UtilityUsers,dc=rcc,dc=mcw,dc=edu"
-ldap-password: "REPLACE_WITH_REAL_PASSWORD"
+ldap-password: "CHANGE_ME"
 ldap-base-dn: "ou=Users,dc=rcc,dc=mcw,dc=edu"
 ldap-uid: "cn"
 ldap-mail: "mail"
@@ -55,9 +53,10 @@ cancel-zero-gpu-jobs-1:
   sliding_warning_minutes: 240
   sliding_cancel_minutes: 300
   
-  util_thres: 10
+  #  util_thres: 7
   warning_frac: 0.25
-  #  max_interactive_hours: 8
+  # In case we want to ignore interactive jobs for a given window:
+  # max_interactive_hours: 8
   # max_interactive_gpus: 1
   email_file_first_warning: "cancel_gpu_jobs_warning_1.txt"
   email_file_second_warning: "cancel_gpu_jobs_warning_2.txt"
@@ -65,18 +64,25 @@ cancel-zero-gpu-jobs-1:
   email_file_sliding_warning: "cancel_gpu_jobs_sliding_warning.txt"
   email_file_sliding_cancel:  "cancel_gpu_jobs_sliding_cancel.txt"
 
-  jobid_cache_path: /hpc/utils/jds/cache
+  jobid_cache_path: /hpc/utils/job_defense_shield/cache
 
-  do_not_cancel: True
+  do_not_cancel: False
   warnings_to_admin: True
 
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
+
   excluded_users:
+    - bgizelar
     - maflister
     - wbranson
     - mkeith
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
 
@@ -90,10 +96,16 @@ zero-util-gpu-hours-1:
   partitions:
     - gpu
 
-  min_run_time: 30
+  #min_run_time: 30
   gpu_hours_threshold_user: 12
   gpu_hours_threshold_admin: 8
   max_num_jobid: 5
+
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
 
   excluded_users:
     - bgizelar
@@ -104,7 +116,7 @@ zero-util-gpu-hours-1:
   email_file: "zero_util_gpu_hours.txt"
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
 
@@ -119,11 +131,17 @@ low-gpu-efficiency-1:
     - gpu
 
   min_run_time: 30
-  eff_thres_pct: 30
-  eff_target_pct: 60
+  eff_thres_pct: 25
+  eff_target_pct: 50
   absolute_thres_hours: 25
   proportion_thres_pct: 1
   num_top_users: 20
+
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
 
   excluded_users:
     - bgizelar
@@ -134,7 +152,7 @@ low-gpu-efficiency-1:
   email_file: "low_gpu_efficiency.txt"
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
 
@@ -157,6 +175,15 @@ excess-cpu-memory-1:
   median_ratio_threshold: 0.20
   num_top_users: 15
   num_jobs_display: 10
+
+  # Optional - Only alert on memory waste jobs if CPU efficiency is also <= 40%.
+  cpu_eff_pct: 40
+
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
  
   excluded_users:
     - bgizelar
@@ -167,7 +194,7 @@ excess-cpu-memory-1:
   email_file: "excess_cpu_memory.txt"
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
 
@@ -190,6 +217,15 @@ low-cpu-efficiency-1:
   proportion_thres_pct: 1
   num_top_users: 20
 
+  # Optional - Only alert if memory is also under this value
+  cpu_mem_eff_pct: 40
+
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
+
   excluded_users:
     - bgizelar
     - maflister
@@ -199,7 +235,7 @@ low-cpu-efficiency-1:
   email_file: "low_cpu_efficiency.txt"
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
 
@@ -218,6 +254,12 @@ zero-cpu-utilization-1:
   min_run_time: 30
   cpu_hours_threshold: 5
 
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
+
   excluded_users:
     - bgizelar
     - maflister
@@ -227,7 +269,7 @@ zero-cpu-utilization-1:
   email_file: "zero_cpu_utilization.txt"
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
 
@@ -250,6 +292,12 @@ excessive-time-cpu-1:
   num_top_users: 10
   num_jobs_display: 10
 
+  excluded_jobname_patterns:
+    - cryosparc
+    - schrodinger
+    - DS2020
+    - biovia
+
   excluded_users:
     - bgizelar
     - maflister
@@ -260,6 +308,6 @@ excessive-time-cpu-1:
   email_file: "excessive_time.txt"
 
   admin_emails:
-    - bgizelar@mcw.edu
+    - rcc_systems@mcw.edu
 
   enabled: True
