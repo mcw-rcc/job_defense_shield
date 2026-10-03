@@ -24,7 +24,7 @@ For graphical job metrics and historical utilization data, use RCC JobStats thro
 <JOBSTATSURL>
 
 For more information about this alert and how to improve GPU efficiency, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#low-gpu-efficiency
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#low-gpu-efficiency
 
 Reviewing your application's documentation may help identify configuration settings that improve GPU utilization.
 

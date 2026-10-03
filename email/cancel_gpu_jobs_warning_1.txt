@@ -19,7 +19,6 @@ If these jobs are no longer needed, consider cancelling them manually:
 <SCANCEL>
 
 For more information about this alert and how to improve GPU efficiency, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#automated-gpu-utilization-monitoring
-https://docs.rcc.mcw.edu/cluster/etiquette/#automated-gpu-utilization-monitoring
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#zero-gpu-utilization-hours
 
 If you need assistance, simply reply to this email. Your reply will automatically create a Research Computing Center support ticket.

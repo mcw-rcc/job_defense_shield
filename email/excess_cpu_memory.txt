@@ -19,6 +19,6 @@ For graphical job metrics and historical utilization data, use RCC JobStats thro
 <JOBSTATSURL>
 
 For more information about this alert and how to right-size your memory requests, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#excess-cpu-memory
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#excess-cpu-memory-requested
 
 If you need assistance determining appropriate memory requirements, simply reply to this email. Your reply will automatically create a Research Computing Center support ticket.

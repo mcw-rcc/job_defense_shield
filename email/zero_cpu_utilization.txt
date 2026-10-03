@@ -13,7 +13,7 @@ Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization char
 <JOBSTATSURL>
 
 For more information about this alert and how to resolve zero CPU utilization, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#zero-cpu-utilization
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#zero-cpu-utilization
 
 Please investigate this issue before submitting additional jobs.
 

@@ -16,7 +16,7 @@ Graphical JobStats dashboard with CPU, memory, GPU, and runtime utilization char
 <JOBSTATSURL>
 
 For more information about this alert and how to improve GPU efficiency, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#zero-gpu-utilization-hours
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#zero-gpu-utilization-hours
 
 Common causes of zero GPU utilization include:
 

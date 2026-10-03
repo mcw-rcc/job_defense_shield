@@ -27,7 +27,7 @@ For graphical job metrics and historical utilization data, use RCC JobStats thro
 <JOBSTATSURL>
 
 For more information about this alert and how to improve CPU efficiency, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#low-cpu-efficiency
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#low-cpu-efficiency
 
 Reviewing your application's documentation may help identify configuration settings that improve resource utilization.
 

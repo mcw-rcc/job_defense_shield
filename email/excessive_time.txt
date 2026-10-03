@@ -11,6 +11,6 @@ Requesting a more accurate runtime can help reduce queue wait times and improve 
 A good target value for Percent-Used is 80% or higher. Consider adjusting the --time Slurm directive for future jobs.
 
 For more information about this alert and how to right-size your time requests, see:
-https://docs.rcc.mcw.edu/cluster/jobs/jobstats-alerts/#excessive-time-limit
+https://docs.rcc.mcw.edu/cluster/monitoring/jobstats/#excessive-time-limit-requested
 
 If you need assistance estimating appropriate runtimes for your workloads, simply reply to this email. Your reply will automatically create a Research Computing Center support ticket.
